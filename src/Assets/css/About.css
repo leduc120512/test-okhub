@@ -1,0 +1,79 @@
+.about {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    background-image: var(--bg-desktop);
+    background-size: cover;
+    background-position: center;
+}
+
+/* lớp nền xanh */
+
+.about-overlay{
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+            90deg,
+            rgba(52,110,173,0.95) 0%,
+            rgba(52,110,173,0.85) 35%,
+            rgba(52,110,173,0.4) 55%,
+            rgba(52,110,173,0) 75%
+    );
+}
+
+.about-content{
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 600px;
+    padding-left: 120px;
+    padding-top: 120px;
+}
+
+.about-title{
+    font-size: 46px;
+    font-weight: 700;
+}
+
+.about-desc{
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.about-btn{
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: none;
+    background: #2c2c6c;
+    color: white;
+}
+
+/* mobile */
+
+@media (max-width:768px){
+
+    .about{
+        background-image: var(--bg-mobile);
+        height: 650px;
+    }
+
+    .about-overlay{
+        background: linear-gradient(
+                180deg,
+                rgba(52,110,173,0.95) 0%,
+                rgba(52,110,173,0.8) 40%,
+                rgba(52,110,173,0) 70%
+        );
+    }
+
+    .about-content{
+        padding: 40px 20px;
+    }
+
+    .about-title{
+        font-size: 28px;
+    }
+
+}

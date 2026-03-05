@@ -1,0 +1,59 @@
+.vision{
+    width: 100%;
+    height: 600px;
+
+    background-image: var(--bg-desktop);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.vision-content{
+    max-width: 800px;
+    padding: 20px;
+}
+
+.vision-sub{
+    color: #3b82f6;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.vision-title{
+    font-size: 32px;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #1f2a44;
+}
+
+.blue{
+    background: linear-gradient(
+            90deg,
+            #328AE2,
+            #FF0D39
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+/* mobile */
+
+@media (max-width:768px){
+
+    .vision{
+        background-image: var(--bg-mobile);
+        height: 500px;
+    }
+
+    .vision-title{
+        font-size: 20px;
+    }
+
+}
