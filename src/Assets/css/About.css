@@ -10,20 +10,20 @@
 
 /* lớp nền xanh */
 
-.about-overlay{
+.about-overlay {
     position: absolute;
     inset: 0;
 
     background: linear-gradient(
             90deg,
-            rgba(52,110,173,0.95) 0%,
-            rgba(52,110,173,0.85) 35%,
-            rgba(52,110,173,0.4) 55%,
-            rgba(52,110,173,0) 75%
+            rgba(52, 110, 173, 0.95) 0%,
+            rgba(52, 110, 173, 0.85) 35%,
+            rgba(52, 110, 173, 0.4) 55%,
+            rgba(52, 110, 173, 0) 75%
     );
 }
 
-.about-content{
+.about-content {
     position: relative;
     z-index: 2;
     color: white;
@@ -32,17 +32,17 @@
     padding-top: 120px;
 }
 
-.about-title{
+.about-title {
     font-size: 46px;
     font-weight: 700;
 }
 
-.about-desc{
+.about-desc {
     margin: 20px 0;
     line-height: 1.6;
 }
 
-.about-btn{
+.about-btn {
     padding: 12px 28px;
     border-radius: 30px;
     border: none;
@@ -50,30 +50,69 @@
     color: white;
 }
 
+.about-btn:hover {
+    cursor: pointer;
+}
+
 /* mobile */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-    .about{
+    .about {
         background-image: var(--bg-mobile);
         height: 650px;
     }
 
-    .about-overlay{
+    .about-overlay {
         background: linear-gradient(
                 180deg,
-                rgba(52,110,173,0.95) 0%,
-                rgba(52,110,173,0.8) 40%,
-                rgba(52,110,173,0) 70%
+                rgba(52, 110, 173, 0.95) 0%,
+                rgba(52, 110, 173, 0.8) 40%,
+                rgba(52, 110, 173, 0) 70%
         );
     }
 
-    .about-content{
+    .about-content {
         padding: 40px 20px;
     }
 
-    .about-title{
+    .about-title {
         font-size: 28px;
     }
 
+}
+
+.about-content > * {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Khi scroll tới */
+
+.about.show .about-content > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger từng dòng */
+
+.about.show .about-sub {
+    transition-delay: 0.1s;
+}
+
+.about.show .about-title {
+    transition-delay: 0.25s;
+}
+
+.about.show .about-desc:nth-of-type(1) {
+    transition-delay: 0.4s;
+}
+
+.about.show .about-desc:nth-of-type(2) {
+    transition-delay: 0.55s;
+}
+
+.about.show .about-btn {
+    transition-delay: 0.7s;
 }

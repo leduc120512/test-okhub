@@ -49,12 +49,16 @@
     transition: transform 0.4s ease, opacity 0.4s ease;
     will-change: transform, opacity;
 }
+.logo:hover {
+    cursor: pointer;
+}
 
 /* Right side container */
 .header-right {
     display: flex;
     align-items: center;
     gap: 1.25rem;
+    margin-bottom: 15px;
 }
 
 /* ==========================================
@@ -86,7 +90,49 @@
     background: #2f3dbd;
     color: white;
 }
+.dk_menu{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
+    padding: 6px 14px;
+    border-radius: 9999px;
+
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(10px);
+
+    transition: all 0.25s ease;
+}
+
+.dk_menu:hover{
+    background: rgba(255,255,255,0.15);
+    cursor: pointer;
+}
+
+.dk_menu p{
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0;
+}.btn_suggest{
+     width: 36px;
+     height: 36px;
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+     border-radius: 50%;
+     border: none;
+
+     background: transparent;
+     color: white;
+ }
+
+.btn_suggest .anticon{
+    font-size:18px;
+}
 /* ==========================================
    MENU BUTTON - CHUNG CHO CẢ MOBILE & DESKTOP
 ========================================== */
@@ -297,6 +343,12 @@
     }
     .mobile-menu-toggle {
         display: block;
+    }
+    .hero-content{
+        left: 48px;
+    }
+    .hero-content h1{
+        font-size: 30px;
     }
 }
 

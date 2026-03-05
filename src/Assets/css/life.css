@@ -4,7 +4,7 @@
 
 .life-header{
     text-align:center;
-    margin-bottom:80px;
+    margin-bottom:50px;
 }
 
 .life-title{
@@ -25,25 +25,31 @@
 /* layout */
 
 .life-wrapper{
-    width:1200px;
-    margin:auto;
-    display:flex;
 
-    gap:80px;
+
+    display:flex;
+justify-content: center;
+
 }
 
 /* LEFT */
 
 .life-left{
-    width:50%;
+    width:41%;
 }
 
 .life-item{
     min-height:300px;
-    margin-top: 100px;
+
 
 }
+.life-sub{
+    color: #165BB8;
+    font-weight: 550;
 
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 .life-item h4{
     color:#2d6cdf;
     margin-bottom:10px;
@@ -80,4 +86,47 @@
     position: absolute;
     top: -26px;
     left: -20px;
+}.life-item{
+     opacity:0;
+     transform:translateY(60px);
+     transition: all 0.8s cubic-bezier(0.22,1,0.36,1);
+ }
+
+/* khi scroll tới */
+
+.life.show .life-item{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* chạy từng item */
+
+.life.show .life-item:nth-child(1){
+    transition-delay:0.1s;
+}
+
+.life.show .life-item:nth-child(2){
+    transition-delay:0.25s;
+}
+
+.life.show .life-item:nth-child(3){
+    transition-delay:0.4s;
+}
+
+.life.show .life-item:nth-child(4){
+    transition-delay:0.55s;
+}
+
+/* ảnh bên phải */
+
+.life-right{
+    opacity:0;
+    transform:translateY(80px);
+    transition: all 1s cubic-bezier(0.22,1,0.36,1);
+}
+
+.life.show .life-right{
+    opacity:1;
+    transform:translateY(0);
+    transition-delay:0.6s;
 }

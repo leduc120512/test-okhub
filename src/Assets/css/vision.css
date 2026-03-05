@@ -19,11 +19,37 @@
 }
 
 .vision-sub{
-    color: #3b82f6;
-    font-size: 14px;
+    color: #165BB8;
+ font-weight: 550;
+
+    font-size: 20px;
     margin-bottom: 20px;
+    transform: translateY(60px);
+    transition: all 0.8s cubic-bezier(0.22,1,0.36,1);
 }
 
+.vision-content > *{
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 3s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* Khi scroll tới */
+
+.vision.show .vision-content > *{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* chạy từng dòng */
+
+.vision.show .vision-sub{
+    transition-delay: 0.15s;
+}
+
+.vision.show .vision-title{
+    transition-delay: 0.35s;
+}
 .vision-title{
     font-size: 32px;
     line-height: 1.6;
