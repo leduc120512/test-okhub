@@ -1,0 +1,158 @@
+.menu-overlay{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(180deg,#2F2E79,#1B2D5A);
+    color:white;
+    z-index:9999;
+    overflow:hidden;
+}
+
+/* HEADER */
+
+.menu-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:30px 60px;
+}
+
+.menu-logo h2{
+    font-size:32px;
+}
+
+.menu-close{
+    font-size:32px;
+    cursor:pointer;
+}
+
+/* CONTAINER */
+
+.menu-container{
+    display:flex;
+    justify-content:space-between;
+    padding:40px 60px;
+}
+
+/* LEFT */
+
+.menu-left{
+    width:50%;
+}
+
+.menu-small{
+    opacity:0.6;
+    margin-bottom:20px;
+}
+
+.menu-list{
+    list-style:none;
+    padding:0;
+}
+
+.menu-list li{
+    font-size:48px;
+    margin-bottom:18px;
+    font-weight:500;
+    cursor:pointer;
+}
+
+.menu-list span{
+    color:#ff3c4d;
+    margin-right:10px;
+}
+
+/* CONTACT */
+
+.menu-contact{
+    margin-top:40px;
+    opacity:0.8;
+}
+
+.menu-contact p{
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+/* LANG */
+
+.menu-lang{
+    margin-top:20px;
+}
+
+.menu-lang span{
+    margin-right:15px;
+    cursor:pointer;
+}
+
+.menu-lang .active{
+    font-weight:bold;
+}
+
+/* RIGHT */
+
+.menu-right{
+    width:45%;
+    position:relative;
+}
+
+/* RED BUTTON */
+
+.menu-circle-btn{
+    position:absolute;
+    top:40px;
+    left:120px;
+
+    width:160px;
+    height:160px;
+
+    background:#ff4c59;
+    border-radius:50%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.menu-circle-btn span{
+    font-size:28px;
+}
+
+/* IMAGES */
+
+.menu-images{
+    position:relative;
+    height:500px;
+}
+
+.menu-img{
+    position:absolute;
+    border-radius:50%;
+    overflow:hidden;
+}
+
+.menu-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* BIG */
+
+.menu-img.big{
+    width:320px;
+    height:320px;
+    right:0;
+    top:0;
+}
+
+/* SMALL */
+
+.menu-img.small{
+    width:260px;
+    height:260px;
+    bottom:0;
+    left:40px;
+}

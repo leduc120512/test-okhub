@@ -1,0 +1,209 @@
+.imprint-section {
+    background: #f5f6fa;
+    min-height: 100vh;
+}
+
+.imprint-container {
+    display: flex;
+    min-height: 100vh;
+    padding: 0 8%;
+}
+
+.imprint-left {
+    width: 45%;
+    padding: 100px 60px 100px 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.imprint-sub {
+    color: #2d5cff;
+    font-weight: 600;
+    margin: 0;
+}
+
+.imprint-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+.imprint-title span {
+    color: #e9426b;
+}
+
+.imprint-desc {
+    color: #666;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+.imprint-right {
+    width: 55%;
+    border-left: 1px solid #eee;
+}
+
+.imprint-scroll {
+    height: 100vh;
+    overflow-y: auto;
+    padding: 40px 0;
+    scrollbar-width: none; /* Firefox */
+}
+
+.imprint-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+.imprint-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 60px 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.life-icon-box {
+    position: relative;
+    width: 70px;
+    flex-shrink: 0;
+}
+
+.life-imagetop {
+    display: block;
+    width: 100%;
+}
+
+.life-imagebt {
+    position: absolute;
+    top: -20px;
+    left: -15px;
+    width: 60%;
+}
+
+.imprint-info h3 {
+    font-size: 38px;
+    color: #2f356c;
+    margin: 0 0 8px;
+}
+
+.imprint-info p {
+    color: #666;
+    margin: 0;
+    font-size: 17px;
+}
+
+/* ────────────────────────────────────────
+   FRIENDSHIP SECTION
+──────────────────────────────────────── */
+.friendship {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+}
+
+.friendship-bg {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+
+.friendship-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            180deg,
+            rgba(16, 42, 77, 0) 0%,
+            rgba(16, 42, 77, 0.6) 60%,
+            #102a4d 100%
+    );
+}
+
+.friendship-content {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.friendship-text {
+    color: white;
+    font-size: 22px;
+    line-height: 1.65;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Animation nhẹ */
+.friendship-content {
+    animation: fadeUp 1.2s ease-out;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 60px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* ────────────────────────────────────────
+   RESPONSIVE
+──────────────────────────────────────── */
+@media (max-width: 768px) {
+    .imprint-container {
+        flex-direction: column;
+    }
+
+    .imprint-left {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding: 60px 20px 40px;
+        top: auto;
+    }
+
+    .imprint-right {
+        width: 100%;
+        border-left: none;
+    }
+
+    .imprint-scroll {
+        height: auto;
+        padding: 0;
+    }
+
+    .imprint-item {
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .imprint-info h3 {
+        font-size: 28px;
+    }
+
+    .imprint-info p {
+        font-size: 15px;
+    }
+
+    .friendship {
+        height: 360px;
+    }
+
+    .friendship-content {
+        width: 90%;
+        bottom: 50px;
+    }
+
+    .friendship-text {
+        font-size: 17px;
+    }
+}
