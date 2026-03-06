@@ -50,7 +50,7 @@
     background:rgba(255,255,255,0.08);
     border-radius:40px;
     padding:6px;
-    width:300px;
+    width:500px;
 }
 
 .subscribe-box input{
@@ -111,21 +111,94 @@
     display:flex;
     justify-content:space-between;
     font-size:13px;
-}@media(max-width:768px){
+}@media (max-width:768px){
 
     .footer-container{
-        grid-template-columns:1fr;
-        gap:30px;
+        grid-template-columns:1fr 1fr;
+        gap:35px;
+        width:88%;
     }
 
-    .footer-bottom{
-        flex-direction:column;
+    /* LOGO + SUBSCRIBE */
+
+    .footer-left{
+        grid-column:1/3;
         text-align:center;
-        gap:5px;
+    }
+
+    .footer-logo img{
+        width:150px;
+        margin:auto;
+    }
+
+    .footer-slogan{
+        margin-top:10px;
+        font-size:14px;
+    }
+
+    .footer-subscribe{
+        margin-top:25px;
+    }
+
+    .subscribe-title{
+        font-size:12px;
+        letter-spacing:1px;
+        margin-bottom:15px;
     }
 
     .subscribe-box{
         width:100%;
+        max-width: 384px;
+        margin:auto;
+    }
+
+    /* MENU */
+
+    .footer-col h4{
+        font-size:13px;
+        margin-bottom:15px;
+    }
+
+    .footer-col li{
+        font-size:14px;
+        margin-bottom:10px;
+    }
+
+    /* CONTACT */
+
+    .footer-col:last-child{
+        grid-column:1/3;
+    }
+
+    .footer-contact{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:25px 25px;
+    }
+
+    .footer-contact li{
+        font-size:14px;
+    }
+
+    .footer-contact span{
+        font-weight:600;
+        display:block;
+        margin-bottom:6px;
+    }
+
+    /* ADDRESS FULL WIDTH */
+
+    .footer-contact li:first-child{
+        grid-column:1/3;
+    }
+
+    /* BOTTOM */
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+        gap:6px;
+        font-size:12px;
     }
 
 }

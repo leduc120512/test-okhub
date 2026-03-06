@@ -43,11 +43,12 @@
 }
 
 .about-btn {
-    padding: 12px 28px;
+    padding: 12px 48px;
     border-radius: 30px;
     border: none;
     background: #2c2c6c;
     color: white;
+    font-weight: 500;
 }
 
 .about-btn:hover {

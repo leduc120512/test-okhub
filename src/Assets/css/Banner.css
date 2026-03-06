@@ -1,489 +1,115 @@
-/* ==========================================
-   RESET & BASE
-========================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* ==========================================
-   BANNER - FULL SCREEN BACKGROUND
-========================================== */
-.Banner {
-    position: relative;
-    width: 100%;
-    height: 100vh;
+/* BANNER */
+.Banner{
+    position:relative;
+    width:100%;
+    height:100vh;
 
-    background-image: url("../img/banner.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image:url("../img/banner.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    overflow:hidden;
 }
 
-@media (max-width: 768px) {
-    .Banner {
-        background-image: url("../img/ImagebANNER.png");
-    }
-}
-/* ==========================================
-   HEADER TOP
-========================================== */
-.header-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
+/* gradient trái */
+.Banner::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:180px;
+    height:100%;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5vw;
+    background:linear-gradient(
+            to right,
+            rgba(20,30,90,0.9) 0%,
+            rgba(20,30,90,0.5) 50%,
+            rgba(20,30,90,0) 100%
+    );
 }
 
-/* Logo */
-.logo {
-    width: 140px;
-    height: auto;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    will-change: transform, opacity;
-}
-.logo:hover {
-    cursor: pointer;
-}
+/* gradient dưới */
+.Banner::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:120px;
 
-/* Right side container */
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin-bottom: 15px;
+    background:linear-gradient(
+            to top,
+            rgba(20,30,90,0.9),
+            rgba(20,30,90,0)
+    );
 }
 
-/* ==========================================
-   LANGUAGE SWITCHER
-========================================== */
-.lang {
-    display: flex;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 9999px;
-    padding: 0.25rem;
-    background: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(10px);
+/* HERO TEXT */
+.hero-content{
+    position:absolute;
+    bottom:120px;
+    left:80px;
+    color:white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -2.6px;
 }
 
-.lang-btn {
-    padding: 0.5rem 1.25rem;
-    border: none;
-    border-radius: 9999px;
-    background: transparent;
-    color: white;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.25s ease;
+.hero-content h1{
+    font-size:48px;
+    font-weight:650;
+    line-height:1.3;
+    letter-spacing:1px;
 }
 
-.lang-btn.active,
-.lang-btn:hover {
-    background: #2f3dbd;
-    color: white;
-}
-.dk_menu{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 6px 14px;
-    border-radius: 9999px;
-
-    border: 1px solid rgba(255,255,255,0.35);
-    background: rgba(255,255,255,0.07);
-    backdrop-filter: blur(10px);
-
-    transition: all 0.25s ease;
+/* animation chữ */
+.line{
+    display:inline-block;
+    transform:translateY(60px);
+    opacity:0;
+    animation:slideUp 3s cubic-bezier(0.22,1,0.36,1) forwards;
 }
 
-.dk_menu:hover{
-    background: rgba(255,255,255,0.15);
-    cursor: pointer;
+.line1{
+    animation-delay:0.2s;
 }
 
-.dk_menu p{
-    color: white;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin: 0;
-}.btn_suggest{
-     width: 36px;
-     height: 36px;
-
-     display: flex;
-     align-items: center;
-     justify-content: center;
-
-     border-radius: 50%;
-     border: none;
-
-     background: transparent;
-     color: white;
- }
-
-.btn_suggest .anticon{
-    font-size:18px;
-}
-/* ==========================================
-   MENU BUTTON - CHUNG CHO CẢ MOBILE & DESKTOP
-========================================== */
-.menu-btn {
-    /* Force circle */
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-    min-height: 48px;
-    border-radius: 50%;
-    padding: 0;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
-    color: white;
-
-    transition: all 0.25s ease;
-    cursor: pointer;
+.line2{
+    animation-delay:0.6s;
 }
 
-.menu-btn:hover {
-    background: rgba(255, 255, 255, 0.22);
-    border-color: rgba(255, 255, 255, 0.65);
-    transform: scale(1.05);
+.hero-content .highlight{
+    font-weight:800;
 }
 
-.menu-btn .anticon {
-    font-size: 22px;
-    color: white;
-}
-
-/* ==========================================
-   MOBILE SPECIFIC
-========================================== */
-.mobile-menu {
-    display: none;
-}
-
-@media (max-width: 767px) {
-    .header-top {
-        padding: 1rem 4vw;
-    }
-
-    .logo {
-        width: 110px;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
-
-    .desktop-menu {
-        display: none;
-    }
-
-    /* Mobile button - tăng độ tương phản & kích thước */
-    .menu-btn.mobile {
-        width: 52px;
-        height: 52px;
-        min-width: 52px;
-        min-height: 52px;
-        background: rgba(30, 40, 70, 0.85);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-    }
-
-    .menu-btn.mobile .anticon {
-        font-size: 24px;
+@keyframes slideUp{
+    to{
+        transform:translateY(0);
+        opacity:1;
     }
 }
 
-/* ==========================================
-   DESKTOP SPECIFIC
-========================================== */
-.desktop-menu {
-    display: none;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .mobile-menu {
-        display: none;
+/* mobile */
+@media (max-width:768px){
+    .Banner{
+        background-image:url("../img/ImagebANNER.png");
     }
 
-    .desktop-menu {
-        display: flex;
-    }
-
-    .menu-btn.desktop {
-        width: 52px;
-        height: 52px;
-    }
-
-    .lang-btn {
-        padding: 0.55rem 1.4rem;
-        font-size: 1rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .header-top {
-        padding: 2rem 6vw;
-    }
-
-    .logo {
-        width: 160px;
-    }
-
-    .menu-btn.desktop {
-        width: 56px;
-        height: 56px;
-    }
-
-    .menu-btn.desktop .anticon {
-        font-size: 24px;
-    }
-}
-
-/* ==========================================
-   SCROLL EFFECT (đã có trong React → chỉ style bổ trợ)
-========================================== */
-.logo {
-    /* Giới hạn nhỏ nhất để không bị quá nhỏ */
-    transform: scale(1);
-    opacity: 1;
-}/* HERO TEXT */
-.hero-content {
-    position: absolute;
-    bottom: 120px;
-    left: 80px;
-    color: white;
-}
-
-.hero-content h1 {
-    font-size: 48px;
-    font-weight: 650;
-    line-height: 1.3;
-    letter-spacing: 1px;
-}
-
-/* Ẩn ban đầu */
-.line {
-    display: inline-block;
-    transform: translateY(60px);
-    opacity: 0;
-    animation: slideUp 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-/* Dòng 1 chạy trước */
-.line1 {
-    animation-delay: 0.2s;
-}
-
-/* Dòng 2 chạy sau */
-.line2 {
-    animation-delay: 0.6s;
-}
-
-.hero-content .highlight {
-    font-weight: 800;
-}
-
-/* Keyframes */
-@keyframes slideUp {
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-/* Desktop menu - ngang, chỉ hiện trên màn lớn */
-.desktop-menu {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.desktop-nav {
-    display: flex;
-    gap: 1.8rem;
-}
-
-.desktop-nav a {
-    color: white; /* hoặc màu của bạn */
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-}
-
-.desktop-nav a:hover {
-    color: #ffd700; /* màu highlight */
-}
-
-/* Mobile toggle - chỉ hiện trên mobile */
-.mobile-menu-toggle {
-    display: none;
-}
-
-/* Ẩn desktop trên mobile, hiện hamburger */
-@media (max-width: 768px) {
-    .desktop-menu {
-        display: none;
-    }
-    .mobile-menu-toggle {
-        display: block;
-    }
     .hero-content{
-        left: 48px;
+        left:48px;
     }
+
     .hero-content h1{
-        font-size: 30px;
+        font-size:30px;
     }
-}
-
-/* Menu overlay full cho mobile */
-.mobile-menu-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease;
-}
-
-.mobile-menu-overlay.open {
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu-content {
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    color: white;
-}
-
-.menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-.menu-logo {
-    height: 50px;
-}
-
-.menu-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    font-size: 1.5rem;
-    margin-bottom: 3rem;
-}
-
-.menu-nav a {
-    color: white;
-    text-decoration: none;
-}
-
-.menu-lang {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}/* Mobile menu overlay - full màn hình */
-.mobile-menu-overlay {
-    position: fixed;
-    inset: 0;                     /* top:0; right:0; bottom:0; left:0; */
-    background: rgba(0, 0, 0, 0.95); /* nền tối */
-    z-index: 9999;
-    display: flex;
-    align-items: flex-start;      /* nội dung bắt đầu từ trên */
-    justify-content: center;
-    overflow-y: auto;             /* nếu menu dài thì scroll */
-
-    /* Ban đầu ẩn hoàn toàn bằng cách dịch chuyển lên trên */
-    transform: translateY(-100%); /* đẩy toàn bộ lên ngoài màn hình */
-    opacity: 0;
-    transition: transform 0.5s ease-out, opacity 0.4s ease-out; /* thời gian + easing mượt */
-    pointer-events: none;         /* không click được khi đóng */
-}
-
-.mobile-menu-overlay.open {
-    transform: translateY(0);     /* trượt về vị trí bình thường */
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Nội dung bên trong menu - thêm hiệu ứng nhẹ cho đẹp */
-.menu-content {
-    width: 90%;
-    max-width: 420px;
-    padding: 2rem 1rem;
-    color: white;
-    text-align: center;
-
-    /* Optional: nội dung cũng slide nhẹ từ trên */
-    transform: translateY(-20px);
-    opacity: 0;
-    transition: transform 0.6s ease-out 0.1s, opacity 0.5s ease-out 0.1s; /* delay nhẹ 0.1s */
-}
-
-.mobile-menu-overlay.open .menu-content {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-/* Header menu (logo + close) */
-.menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2.5rem;
-}
-
-/* Nav links - optional stagger animation nếu muốn từng item hiện dần */
-.menu-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
-    font-size: 1.4rem;
-}
-
-.menu-nav a {
-    color: white;
-    text-decoration: none;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-/* Stagger từng link (hiện dần từ trên xuống) - rất mượt */
-.mobile-menu-overlay.open .menu-nav a:nth-child(1) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
-.mobile-menu-overlay.open .menu-nav a:nth-child(2) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
-.mobile-menu-overlay.open .menu-nav a:nth-child(3) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
-.mobile-menu-overlay.open .menu-nav a:nth-child(4) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
-.mobile-menu-overlay.open .menu-nav a:nth-child(5) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
-
-/* Lang buttons */
-.menu-lang {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
 }

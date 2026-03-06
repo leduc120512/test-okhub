@@ -11,7 +11,7 @@
 
 .imprint-left {
     width: 45%;
-    padding: 100px 60px 100px 0;
+    padding: 205px 60px 100px 0;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -206,4 +206,78 @@
     .friendship-text {
         font-size: 17px;
     }
+}.imprint-section {
+     opacity: 0;
+     transform: translateY(80px);
+     transition: all 1s ease;
+ }
+
+.imprint-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.imprint-item {
+    opacity: 0.4;
+    transform: translateY(40px);
+    transition: all 0.5s ease;
+}
+
+.imprint-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}.quote-highlight{
+     position: relative;
+     color: rgba(255,255,255,0.5); /* chữ mờ ban đầu */
+     display: inline-block;
+ }
+
+.quote-highlight::after{
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 1.6s ease;
+}
+
+/* khi scroll tới section */
+.imprint-section.show .quote-highlight::after{
+    width: 100%;
+}
+.quote-highlight{
+    background: linear-gradient(
+            to right,
+            white 0%,
+            white 50%,
+            rgba(255,255,255,0.4) 50%
+    );
+    background-size: 200% 100%;
+    background-position: right;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background-position 1.5s ease;
+}
+
+.imprint-section.show .quote-highlight{
+    background-position: left;
+}.quote-highlight {
+     position: relative;
+     color: rgba(255,255,255,0.3);
+ }
+
+.quote-highlight::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: calc(var(--progress) * 100%);
+    overflow: hidden;
+
+    color: white;
+    white-space: nowrap;
 }

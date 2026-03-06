@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useEffect, useRef, useState} from "react";
 import "../../../Assets/css/Detail.css";
 
 import detail_one from "../../../Assets/img/detail_one.png";
@@ -10,6 +10,25 @@ function Investment() {
 
     const [image, setImage] = useState(detail_one);
     const [active, setActive] = useState("training");
+    const ref = useRef(null);
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setShow(true);
+                }
+            },
+            { threshold: 0.3 }
+        );
+
+        if (ref.current) observer.observe(ref.current);
+
+        return () => {
+            if (ref.current) observer.unobserve(ref.current);
+        };
+    }, []);
     return (
         <section
             className="investment"
@@ -17,15 +36,11 @@ function Investment() {
         >
 
             {/* LEFT */}
-            <div className="investment-left">
+            <div ref={ref} className={`investment-left ${show ? "show" : ""}`}>
+                <p className="title-sub">• LĨNH VỰC ĐẦU TƯ</p>
 
-                <p className="title-sub">• HỆ SINH THÁI AMI&M</p>
-
-                <h2 className="title">
-                    Ami&M là đối tác tư vấn –
-                    <span className="red"> đầu tư bền vững</span>,
-                    phát triển dịch vụ cao cấp
-                    và <span className="blue">nâng tầm giáo dục trải nghiệm.</span>
+                <h2 className="title blue">
+                    Ami&M là đối tác tư vấn - đầu tư bền vững, phát triển dịch vụ cao cấp và nâng tầm giáo dục trải nghiệm.
                 </h2>
 
                 <p className="desc">
@@ -35,13 +50,12 @@ function Investment() {
                 </p>
 
                 <div className="left-image">
-                    <img src={detail_two} alt="" />
+                    <div className="imgmain-wrapper">
+                        <img src={detail_two} alt="" />
+                    </div>
                 </div>
-
             </div>
 
-
-            {/* RIGHT */}
             <div className="investment-right">
 
                 <div className="main-circle">

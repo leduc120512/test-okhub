@@ -1,13 +1,45 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../../../Assets/css/NewsSection.css";
 
-import bg from "../../../Assets/img/newhotbg.png";
+import news1 from "../../../Assets/img/logo_partner/partner.png";
+import news2 from "../../../Assets/img/logo_partner/partner2.png";
+import news3 from "../../../Assets/img/logo_partner/partner.png";
+import people from "../../../Assets/img/divwow.png";
+import RippleButton from "../../../components/common/Button";
 
-import news1 from "../../../Assets/img/new1.png";
-import news2 from "../../../Assets/img/new1.png";
-import news3 from "../../../Assets/img/new1.png";
-import people from "../../../Assets/img/people.png";
 function NewsSection() {
+
+    const newsRef = useRef(null);
+    const careerRef = useRef(null);
+
+    const [showNews, setShowNews] = useState(false);
+    const [showCareer, setShowCareer] = useState(false);
+
+    useEffect(() => {
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+
+                    if (entry.target === newsRef.current && entry.isIntersecting) {
+                        setShowNews(true);
+                    }
+
+                    if (entry.target === careerRef.current && entry.isIntersecting) {
+                        setShowCareer(true);
+                    }
+
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        if (newsRef.current) observer.observe(newsRef.current);
+        if (careerRef.current) observer.observe(careerRef.current);
+
+        return () => observer.disconnect();
+
+    }, []);
 
     const news = [
         {
@@ -47,91 +79,113 @@ function NewsSection() {
     };
 
     return (
-        <div>
+        <div className="about_new_section">
 
+            {/* NEWS SECTION */}
 
-        <section
-            className="news-section"
-            style={{ backgroundImage: `url(${bg})` }}
-        >
+            <section className="news-section">
 
-            {/* overlay */}
-            <div className="news-overlay"></div>
+                <div className="layout2"></div>
 
-            <div className="news-container">
+                <div className="news-container">
 
-                {/* LEFT */}
-                <div className="news-left">
+                    {/* LEFT */}
 
-                    <p className="news-sub">• DANH SÁCH TIN TỨC</p>
+                    <div
+                        className={`news-left ${showNews ? "show" : ""}`}
+                        ref={newsRef}
+                    >
 
-                    <h2 className="news-title">
-                        Có gì mới <br /> tại Ami&M?
-                    </h2>
+                        <p className="news-sub">• DANH SÁCH TIN TỨC</p>
 
-                    <p className="news-desc">
-                        Ami&M, viết tắt của Amity and More Tình bằng hữu
-                        và hơn thế nữa chính là cái tên và cũng là sự
-                        khẳng định cho tôn chỉ mà chúng tôi luôn tâm niệm.
-                    </p>
+                        <h2 className="news-title">
+                            Có gì mới <br /> tại Ami&M?
+                        </h2>
 
-                    <button className="news-btn">
-                        Xem tất cả →
-                    </button>
+                        <h2 className="news-title diss">
+                            Có gì mới tại Ami&M?
+                        </h2>
 
-                </div>
+                        <p className="news-desc">
+                            Ami&M, viết tắt của Amity and More Tình bằng hữu
+                            và hơn thế nữa chính là cái tên và cũng là sự
+                            khẳng định cho tôn chỉ mà chúng tôi luôn tâm niệm.
+                        </p>
 
-
-                {/* RIGHT */}
-                <div className="news-right">
-
-                    <button className="news-arrow left" onClick={prevSlide}>
-                        ‹
-                    </button>
-
-                    <div className="news-slider">
-
-                        {news.slice(index, index + 3).map((item, i) => (
-                            <div className="news-card" key={i}>
-
-                                <div className="news-image">
-
-                                    <img src={item.image} alt="" />
-
-                                    <span className="news-tag">
-                    Nổi bật
-                  </span>
-
-                                </div>
-
-                                <div className="news-content">
-
-                                    <h4>{item.title}</h4>
-
-                                    <p>{item.date}</p>
-
-                                </div>
-
-                            </div>
-                        ))}
+                        <RippleButton  className="news-btn desktop-btn">
+                            Xem tất cả →
+                        </RippleButton>
 
                     </div>
 
-                    <button className="news-arrow right" onClick={nextSlide}>
-                        ›
+                    {/* RIGHT */}
 
-                    </button>
+                    <div className="news-right">
+
+                        <button className="news-arrow left" onClick={prevSlide}>
+                            ‹
+                        </button>
+
+                        <div className="news-slider">
+
+                            {news.slice(index, index + 3).map((item, i) => (
+
+                                <div className="news-card" key={i}>
+
+                                    <div className="news-image">
+
+                                        <img src={item.image} alt="" />
+
+                                        <span className="news-tag">
+                                            Nổi bật
+                                        </span>
+
+                                        <span className="news-tag_detail">
+                                            Xem chi tiết ↗
+                                        </span>
+
+                                    </div>
+
+                                    <div className="news-content">
+
+                                        <h4>{item.title}</h4>
+
+                                        <p>{item.date}</p>
+
+                                    </div>
+
+                                </div>
+
+                            ))}
+
+                        </div>
+
+                        <button className="news-arrow right" onClick={nextSlide}>
+                            ›
+                        </button>
+
+                    </div>
+
+                    <RippleButton className="news-btn mobile-btn">
+                        Xem tất cả →
+                    </RippleButton>
 
                 </div>
 
-            </div>
+            </section>
 
-        </section>
+
+            {/* CAREER SECTION */}
+
             <section
                 className="career-section"
                 style={{ backgroundImage: `url(${people})` }}
             >
-                <div className="career-content">
+
+                <div
+                    ref={careerRef}
+                    className={`career-content ${showCareer ? "show" : ""}`}
+                >
 
                     <p className="career-sub">• ĐỒNG HÀNH TIẾN BƯỚC •</p>
 
@@ -145,12 +199,14 @@ function NewsSection() {
                         Hãy ứng tuyển để trở thành thành viên trong gia đình Ami&M!
                     </p>
 
-                    <button className="career-btn">
+                    <RippleButton className="career-btn">
                         Cơ hội việc làm →
-                    </button>
+                    </RippleButton>
 
                 </div>
+
             </section>
+
         </div>
     );
 }

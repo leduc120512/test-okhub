@@ -1,0 +1,48 @@
+.btn-ripple{
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+/* text */
+
+.btn-ripple span{
+    position:relative;
+    z-index:2;
+}
+
+/* ripple effect */
+
+.btn-ripple::before{
+    content:"";
+    position:absolute;
+
+    width:0;
+    height:0;
+
+    background:#F4475C;
+    border-radius:50%;
+
+    left:var(--x,50%);
+    top:var(--y,50%);
+
+    transform:translate(-50%,-50%);
+    transition:width 1s ease, height 1s ease;
+
+    z-index:1;
+}
+
+.btn-ripple:hover::before{
+    width:350px;
+    height:350px;
+}
+
+/* hover nâng nút */
+
+.btn-ripple{
+    transition:transform .2s ease;
+}
+
+.btn-ripple:hover{
+    transform:translateY(-2px);
+}

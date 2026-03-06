@@ -1,5 +1,5 @@
 .life{
-    padding:100px 0;
+    padding:40px 0;
 }
 
 .life-header{
@@ -35,12 +35,14 @@ justify-content: center;
 /* LEFT */
 
 .life-left{
-    width:41%;
+    width:35%;
 }
 
 .life-item{
     min-height:300px;
-
+    transition: opacity 0.5s ease, transform 0.6s ease;
+    /* có thể thêm chút scale nhỏ để tạo cảm giác "chìm" hơn */
+    transform: scale(0.96);
 
 }
 .life-sub{
@@ -63,11 +65,12 @@ justify-content: center;
 }
 
 .life-right img{
-    width:100%;
-    border-radius:16px;
+    width:90%;
+
 
     position:sticky;
     top:120px;
+    margin-left: 40px;
 }
 .life-imagetop_genaral{
     font-size: 30px;
@@ -129,4 +132,124 @@ justify-content: center;
     opacity:1;
     transform:translateY(0);
     transition-delay:0.6s;
+}/* Default state: slightly faded when not active */
+.life-item {
+    opacity: 0.6;                /* ← thay đổi mức mờ mong muốn: 0.5 ~ 0.75 đều ổn */
+    transition: opacity 0.5s ease, transform 0.6s ease;
+    /* có thể thêm chút scale nhỏ để tạo cảm giác "chìm" hơn */
+    transform: scale(0.96);
+}
+
+/* Khi section đã show, vẫn giữ mặc định mờ → chỉ item active mới sáng lên */
+.life.show .life-item {
+    opacity: 0.6;
+    transform: scale(0.96);
+}
+
+/* Item đang active (đang ở viewport) */
+.life.show .life-item.active {
+    opacity: 1;
+    transform: scale(1);
+    /* tùy chọn: thêm shadow hoặc border để nổi bật hơn */
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.08); */
+}
+
+/* Optional: làm mờ nhẹ các item không active khi đã scroll qua */
+.life.show .life-item.past {
+    opacity: 0.45;   /* mờ hơn nữa nếu đã scroll qua */
+}
+
+@media (max-width: 768px) {
+
+    .life-wrapper{
+        display: flex;
+        /* justify-content: center; */
+        flex-direction: column;
+        align-items: center;
+    }
+    .life-left{
+        width: 90%;
+
+    }
+    .life-right{
+        width:90%;
+        border-radius: 5px;
+    }
+    .life-left {
+        order: 2;                  /* nếu cần ép text xuống dưới (thường không cần) */
+    }
+.life{
+    padding: 0;
+}
+    .life-right {
+        order: 1;                  /* ảnh lên đầu */
+    }
+    .life-item{
+        min-height:200px;
+        padding-top: 47px;
+    }
+    .life-right img{
+
+        margin-left: 0px;
+    }
+}/* HEADER ANIMATION */
+
+.life-header{
+    text-align:center;
+    margin-bottom:50px;
+
+    opacity:0;
+    transform:translateY(-60px);
+    transition: all 0.9s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* khi scroll tới section */
+
+.life.show .life-header{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* sub title */
+
+.life-sub{
+    color:#165BB8;
+    font-weight:550;
+    font-size:20px;
+    margin-bottom:20px;
+
+    opacity:0;
+    transform:translateY(-30px);
+    transition: all 0.7s ease;
+}
+
+/* title */
+
+.life-title{
+    font-size:32px;
+    background: linear-gradient(
+            90deg,
+            rgba(50,138,226,1) 0%,
+            rgba(255,13,57,1) 100%
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    opacity:0;
+    transform:translateY(-30px);
+    transition: all 0.9s ease;
+}
+
+/* khi scroll tới */
+
+.life.show .life-sub{
+    opacity:1;
+    transform:translateY(0);
+    transition-delay:0.1s;
+}
+
+.life.show .life-title{
+    opacity:1;
+    transform:translateY(0);
+    transition-delay:0.35s;
 }

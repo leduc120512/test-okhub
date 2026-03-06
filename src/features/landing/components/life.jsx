@@ -77,24 +77,24 @@ function Life() {
                     {[
                         {
                             title: "VỚI CÁN BỘ NHÂN VIÊN",
-                            desc: "Cảm thấy gắn kết, được tôn trọng và phát triển cùng công ty.",
+                            desc: "Cảm thấy gắn kết, được trân trọng, được tạo cơ hội để khai phá, phát triển, khẳng định giá trị bản thân",
                         },
                         {
                             title: "VỚI KHÁCH HÀNG",
-                            desc: "Cung cấp các sản phẩm, dịch vụ chất lượng cao với trải nghiệm tốt nhất.",
+                            desc: "Cung cấp các sản phẩm - dịch vụ theo tiêu chuẩn quốc tế, mang đến cho khách hàng những trải nghiệm tốt nhất.",
                         },
                         {
                             title: "VỚI ĐỐI TÁC",
-                            desc: "Xây dựng mối quan hệ tin cậy, cùng phát triển bền vững.",
+                            desc: "Tin tưởng và muốn hợp tác dài lâu trên nền tảng của sự phát triển bền vững và hướng tới những giá trị tốt đẹp",
                         },
                         {
                             title: "VỚI CỘNG ĐỒNG",
-                            desc: "Hài hòa lợi ích doanh nghiệp và trách nhiệm xã hội.",
+                            desc: "Tin tưởng và muốn hợp tác dài lâu trên nền tảng của sự phát triển bền vững và hướng tới những giá trị tốt đẹp",
                         },
                     ].map((item, index) => (
                         <div
                             key={index}
-                            className="life-item"
+                            className={`life-item ${activeIndex === index ? "active" : ""}`}
                             data-index={index}
                             ref={(el) => (itemsRef.current[index] = el)}
                         >

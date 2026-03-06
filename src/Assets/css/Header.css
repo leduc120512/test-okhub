@@ -1,0 +1,416 @@
+/* ==========================================
+   HEADER TOP
+========================================== */
+.header-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5vw;
+}
+
+/* Logo */
+.logo {
+    width: 140px;
+    height: auto;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    will-change: transform, opacity;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+/* Right side container */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   LANGUAGE SWITCHER
+========================================== */
+
+.lang {
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 9999px;
+    padding: 0.25rem;
+    background-color: rgb(35 31 32 / 13%);
+
+}
+
+.lang-btn {
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 9999px;
+    background: transparent;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.lang-btn.active,
+.lang-btn:hover {
+    background: #2f3dbd;
+    color: white;
+}
+
+
+/* ==========================================
+   DK MENU
+========================================== */
+
+.dk_menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 6px 14px;
+    border-radius: 9999px;
+
+    border: 1px solid rgba(255,255,255,0.35);
+    background-color: rgb(35 31 32 / 13%);
+
+    transition: all 0.25s ease;
+}
+
+.dk_menu:hover {
+    background: rgba(255,255,255,0.15);
+    cursor: pointer;
+}
+
+.dk_menu p {
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+
+/* ==========================================
+   BUTTON SUGGEST
+========================================== */
+
+.btn_suggest{
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: none;
+
+    background: transparent;
+    color: white;
+}
+
+.btn_suggest .anticon{
+    font-size:18px;
+}
+
+
+/* ==========================================
+   MENU BUTTON
+========================================== */
+
+.menu-btn {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+
+    border-radius: 50%;
+    padding: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    color: white;
+
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.65);
+    transform: scale(1.05);
+}
+
+.menu-btn .anticon {
+    font-size: 22px;
+    color: white;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 767px) {
+
+    .header-top {
+        padding: 1rem 4vw;
+    }
+
+    .logo {
+        width: 110px;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .menu-btn.mobile {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        min-height: 52px;
+
+        background: rgba(30, 40, 70, 0.85);
+
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-btn.mobile .anticon {
+        font-size: 24px;
+    }
+
+}
+
+
+/* ==========================================
+   DESKTOP
+========================================== */
+
+.desktop-menu {
+    display: none;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+
+    .mobile-menu {
+        display: none;
+    }
+
+    .desktop-menu {
+        display: flex;
+    }
+
+    .menu-btn.desktop {
+        width: 52px;
+        height: 52px;
+    }
+
+    .lang-btn {
+        padding: 0.55rem 1.4rem;
+        font-size: 1rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .header-top {
+        padding: 2rem 6vw;
+    }
+
+    .logo {
+        width: 160px;
+    }
+
+    .menu-btn.desktop {
+        width: 56px;
+        height: 56px;
+    }
+
+    .menu-btn.desktop .anticon {
+        font-size: 24px;
+    }
+
+}.header-top {
+
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+
+     z-index: 1000;
+
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+     padding: 20px 60px;
+
+     background: none;
+
+     transform: translateY(-120%);
+     opacity: 0;
+
+     transition:
+             transform 2s cubic-bezier(0.22, 1, 0.36, 1),
+             opacity 0.5s ease;
+
+     will-change: transform, opacity;
+ }
+
+
+/* Khi load web xong */
+
+.header-top.mounted.visible {
+
+    transform: translateY(0);
+    opacity: 1;
+
+}
+
+
+/* Khi scroll xuống */
+
+.header-top.hidden {
+
+    transform: translateY(-120%);
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* Logo */
+
+.logo {
+
+    width: 150px;
+    height: auto;
+
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+}
+
+.logo:hover {
+
+    transform: scale(1.05);
+    cursor: pointer;
+
+}
+
+
+/* Right side */
+
+.header-right {
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+}
+
+
+/* Language */
+
+.lang {
+
+    display: flex;
+    gap: 10px;
+
+}
+
+.lang-btn {
+
+    background: none;
+    border: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    opacity: 0.6;
+    cursor: pointer;
+
+}
+
+.lang-btn.active {
+
+    opacity: 1;
+
+}
+
+
+/* Menu */
+
+.dk_menu {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    cursor: pointer;
+
+}
+
+.btn_suggest {
+
+    width: 38px;
+    height: 38px;
+
+}
+
+
+/* Mobile */
+
+.mobile-menu {
+
+    display: none;
+
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .header-top {
+        padding: 16px 20px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+}

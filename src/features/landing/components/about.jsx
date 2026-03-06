@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "../../../Assets/css/About.css";
 import abdk from "../../../Assets/img/abdk.png";
 import aboutmobile from "../../../Assets/img/aboutmobile.png";
+import RippleButton from "../../../components/common/Button";
 
 function About() {
 
@@ -57,9 +58,9 @@ function About() {
                     Tại Ami&M, chúng tôi được sống và làm việc hết mình!
                     Được gắn bó và kết nối cũng những người bằng hữu mà chúng tôi gọi là ANH EM - AM, được bứt phá các giới hạn bản thân để phát triển, thoả sức thử thách và gắn bó nhiệt thành để cùng nhau kiến tạo các giá trị mà mình tin tưởng.   </p>
 
-                <button className="about-btn">
+                <RippleButton className="about-btn">
                     HÀNH TRÌNH CỦA AMIM →
-                </button>
+                </RippleButton>
 
             </div>
 
