@@ -8,6 +8,8 @@ function About() {
 
     const ref = useRef(null);
     const [visible, setVisible] = useState(false);
+    const [offset, setOffset] = useState(0);
+    const lastScroll = useRef(0);
 
     useEffect(() => {
 
@@ -27,6 +29,43 @@ function About() {
         return () => observer.disconnect();
 
     }, []);
+    useEffect(() => {
+        const handleScroll = () => {
+            let move = window.scrollY * 0.05;
+
+            // giới hạn 20px
+            if (move > 20) move = 20;
+
+            setOffset(move);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScroll = window.scrollY;
+
+            let diff = currentScroll - lastScroll.current;
+
+            setOffset((prev) => {
+                let next = prev + diff * 0.2;
+
+                // giới hạn ±30px
+                if (next > 30) next = 30;
+                if (next < -30) next = -30;
+
+                return next;
+            });
+
+            lastScroll.current = currentScroll;
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <section
@@ -37,8 +76,23 @@ function About() {
                 "--bg-mobile": `url(${aboutmobile})`,
             }}
         >
+            {/* content */}
 
-            <div className="about-overlay"></div>
+
+            <div
+                className="about-circle-ov about-circle-ov-red"
+                style={{ transform: `translateY(${offset}px)` }}
+            />
+
+            <div
+                className="about-circle-ov about-circle-ov-yellow"
+                style={{ transform: `translateY(${offset}px)` }}
+            />
+
+            <div
+                className="about-circle-ov about-circle-ov-blur"
+                style={{ transform: `translateY(${offset}px)` }}
+            />
 
             <div className="about-content">
 

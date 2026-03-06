@@ -29,6 +29,32 @@ function Investment() {
             if (ref.current) observer.unobserve(ref.current);
         };
     }, []);
+    useEffect(() => {
+        if (!show) return;
+
+        const items = [
+            { key: "training", img: detail_one },
+            { key: "investment", img: detail_two },
+            { key: "wealth", img: detail_one }
+        ];
+
+        let index = 0;
+
+        const interval = setInterval(() => {
+            index++;
+
+            if (index >= items.length) {
+                clearInterval(interval);
+                return;
+            }
+
+            setActive(items[index].key);
+            setImage(items[index].img);
+
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, [show]);
     return (
         <section
             className="investment"

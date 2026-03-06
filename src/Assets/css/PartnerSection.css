@@ -313,4 +313,12 @@ font-weight: 600;
     border-radius:20px;
     object-fit:cover;
     transition:all .45s ease;
+}.partner-avatars img{
+     opacity:.5;
+     transition:all .3s ease;
+ }
+
+.partner-avatars img.active{
+    opacity:1;
+    transform:scale(1.15);
 }

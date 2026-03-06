@@ -6,10 +6,45 @@
     background-image: var(--bg-desktop);
     background-size: cover;
     background-position: center;
+
+    transform: translateX(20px);   /* bắt đầu lệch sang phải */
+    transition: transform 1s ease; /* animation mượt */
 }
 
+.about.show {
+    transform: translateX(0);      /* về vị trí ban đầu */
+}
 /* lớp nền xanh */
+.about-circle-ov{
+    position:absolute;
+    border-radius:50%;
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+.about-circle-ov-blur{
+    top: 300px;
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+    background-color: none;
+    right: 589px;
+}
+.about-circle-ov-yellow{
+    height: 70px;
+    width: 70px;
+    background-color: rgb(141 198 63);
+    right: 79px;
+    bottom: 105px;
+}
+.about-circle-ov-red{
 
+
+    top: 72px;
+    height: 90px;
+    width: 90px;
+    background-color:rgb(237 27 47);
+    right: 205px;
+}
 .about-overlay {
     position: absolute;
     inset: 0;
@@ -52,7 +87,7 @@
     color: white;
     font-weight: 500;
     letter-spacing: 1px;
-    margin-top: 25px;
+    margin-top: 45px;
 }
 
 .about-btn:hover {

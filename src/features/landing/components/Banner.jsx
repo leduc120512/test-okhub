@@ -22,7 +22,7 @@ export default function Banner() {
         };
     }, [menuOpen]);
 
-    const scale = Math.max(1, 1 - scrollY / 700);
+    const scale = Math.min(1.2, 0.8 + scrollY / 700);
     const opacity = Math.max(1, 1 - scrollY / 450);
 
     return (

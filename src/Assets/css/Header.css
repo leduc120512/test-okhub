@@ -16,7 +16,7 @@
 
 /* Logo */
 .logo {
-    width: 140px;
+    width: 200px;
     height: auto;
     transition: transform 0.4s ease, opacity 0.4s ease;
     will-change: transform, opacity;
