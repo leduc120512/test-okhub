@@ -26,10 +26,11 @@
    display: contents;
 }
 .cooperate-imgig-p{
-    top: 163px;
+    top: 246px;
     left: 0;
 
     width: 65%;
+    z-index: 0;
 }
 .desktop_unium{
     display: flex;
@@ -232,7 +233,7 @@ position: relative;
     z-index: 4;
 position: absolute;
     top: -103px;
-    left: 224px;
+    left: 190px;
 }
 
 .partner-logo-title p{

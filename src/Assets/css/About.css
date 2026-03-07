@@ -2,12 +2,12 @@
     position: relative;
     width: 100%;
 
-
+overflow: hidden;
     background-image: var(--bg-desktop);
     background-size: cover;
     background-position: center;
 
-    transform: translateX(20px);   /* bắt đầu lệch sang phải */
+    /* bắt đầu lệch sang phải */
     transition: transform 1s ease; /* animation mượt */
 }
 .about-layout {

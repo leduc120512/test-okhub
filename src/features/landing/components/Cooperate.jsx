@@ -108,22 +108,20 @@ là chìa khóa giúp thế hệ trẻ phát triển toàn diện trong tương 
 
     /* auto change partner */
 
+    /* auto change partner */
     useEffect(() => {
-
         if (!show) return;
 
         const interval = setInterval(() => {
-
-            const next = (activeIndex + 1) % partners.length;
-
-            changePartner(next);
-
-        }, 2000);
+            setActiveIndex(prev => {
+                const next = (prev + 1) % partners.length;
+                return next;
+            });
+            setFade(true);
+        }, 3000);
 
         return () => clearInterval(interval);
-
-    }, [show, activeIndex]);
-
+    }, [show]);
     const active = partners[activeIndex];
     const [index, setIndex] = useState(0);
 
