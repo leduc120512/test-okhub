@@ -4,7 +4,7 @@ import "../../../Assets/css/Life.css";
 // Các ảnh theo thứ tự (đúng 4 ảnh cho 4 mục)
 import life1 from "../../../Assets/img/life.png";               // nhân viên
 import life2 from "../../../Assets/img/Su-menh-voi-khach-hang.webp"; // khách hàng
-          // cộng đồng (thay bằng ảnh thật)
+// cộng đồng (thay bằng ảnh thật)
 import life_icon from "../../../Assets/img/life_Vector.png";
 import life_icon2 from "../../../Assets/img/life_Switch.png";
 
@@ -67,7 +67,7 @@ function Life() {
                     <br />
                     cho những người đồng hành
                 </h2>
-
+                {/* Nếu bạn muốn thêm step indicator ở header thì để đây */}
 
             </div>
 

@@ -19,7 +19,7 @@
     position:absolute;
     border-radius:50%;
     will-change: transform;
-    transition: transform 1.5s linear;
+    transition: transform 0.1s linear;
 }
 .about-circle-ov-blur{
     top: 300px;

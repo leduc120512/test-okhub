@@ -52,9 +52,9 @@ function About() {
             setOffset((prev) => {
                 let next = prev + diff * 0.2;
 
-                // giới hạn ±50px
-                if (next > 100) next = 100;
-                if (next < -100) next = -100;
+                // giới hạn ±30px
+                if (next > 30) next = 30;
+                if (next < -30) next = -30;
 
                 return next;
             });
