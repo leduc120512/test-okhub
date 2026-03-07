@@ -161,6 +161,7 @@
 @media (max-width: 768px) {
     .imprint-container {
         flex-direction: column;
+        padding: 0;
     }
 
     .imprint-left {

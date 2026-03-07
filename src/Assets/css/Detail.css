@@ -85,6 +85,12 @@
     position:relative;
 
 }
+/*.border-main-circle{*/
+/*    position: relative;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    z-index: 10000;*/
+/*}*/
 
 .main-circle img{
     width:100%;
@@ -105,6 +111,9 @@
 @media (max-width: 768px){
     .investment-right{
         display: none;
+    }
+    .investment{
+        margin-top: 100px;
     }
     .investment-left{
         width:100%;padding: 0;

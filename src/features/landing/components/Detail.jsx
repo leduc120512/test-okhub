@@ -5,7 +5,7 @@ import detail_one from "../../../Assets/img/detail_one.png";
 import detail_two from "../../../Assets/img/detail_two.png";
 import defaultImg from "../../../Assets/img/logo-blue.svg";
 import detailbackground from "../../../Assets/img/detailbackground.png";
-
+import circleMain from "../../../Assets/img/bordermaincircle.png";
 function Investment() {
 
     const [image, setImage] = useState(detail_one);
@@ -107,6 +107,7 @@ function Investment() {
                         </button>
 
                     </div>
+
 
                 </div>
 

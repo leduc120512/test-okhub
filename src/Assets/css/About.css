@@ -120,7 +120,9 @@
 /* mobile */
 
 @media (max-width: 768px) {
-
+.about{
+    height: 1000px;
+}
 
     .about-layout2 {
 

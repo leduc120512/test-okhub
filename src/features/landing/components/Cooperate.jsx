@@ -29,6 +29,8 @@ import logo12 from "../../../Assets/img/logo_partner/WATG.png";
 
 import imgIG from "../../../Assets/img/toro3.png";
 import Mask_group from "../../../Assets/img/Mask_group.png";
+import Vector_cirle from "../../../Assets/img/Vector_cirle.png";
+import Union from "../../../Assets/img/Union.png";
 
 
 function PartnerSection() {
@@ -67,7 +69,7 @@ là chìa khóa giúp thế hệ trẻ phát triển toàn diện trong tương 
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
-    const [fade, setFade] = useState(true);
+    const [fade,setFade] = useState(false)
     const [show, setShow] = useState(false);
 
     const changePartner = (index) => {
@@ -120,7 +122,19 @@ là chìa khóa giúp thế hệ trẻ phát triển toàn diện trong tương 
     }, [show, activeIndex]);
 
     const active = partners[activeIndex];
+    const [index, setIndex] = useState(0);
 
+    const next = () => {
+        setIndex((prev) => (prev + 1) % partners.length);
+    };
+
+    const prev = () => {
+        setIndex((prev) =>
+            prev === 0 ? partners.length - 1 : prev - 1
+        );
+    };
+
+    const partner = partners[index];
     return (
         <div>
 
@@ -134,6 +148,15 @@ là chìa khóa giúp thế hệ trẻ phát triển toàn diện trong tương 
 
                         <p className="partner-sub">• HỢP TÁC VỮNG BỀN</p>
 
+                        {/* MOBILE HEADER */}
+                        <div className="partner-mobile-header">
+                            <img className="partner-mobile-avatar" src={active.image} alt="" />
+
+                            <div className="partner-mobile-quote">
+                                "
+                            </div>
+                        </div>
+
                         <p className="partner-text">{active.text}</p>
 
                         <h4 className="partner-name">{active.name}</h4>
@@ -141,7 +164,6 @@ là chìa khóa giúp thế hệ trẻ phát triển toàn diện trong tương 
                         <p className="partner-role">{active.role}</p>
 
                         <div className="partner-avatars">
-
                             {partners.map((item, index) => (
                                 <img
                                     key={index}
@@ -151,13 +173,12 @@ là chìa khóa giúp thế hệ trẻ phát triển toàn diện trong tương 
                                     className={activeIndex === index ? "active" : ""}
                                 />
                             ))}
-
                         </div>
 
                     </div>
 
                     {/* RIGHT */}
-
+                    <p className="partner-sub partner-submobile">• HỢP TÁC VỮNG BỀN</p>
                     <div className={`partner-right ${fade ? "fade-in" : "fade-out"}`}>
 
                         <div className="partner-image">
@@ -165,10 +186,51 @@ là chìa khóa giúp thế hệ trẻ phát triển toàn diện trong tương 
                         </div>
 
                     </div>
+                    <div className="partner-mobile-main">
+
+
+
+                        <div className="partner-mobile-card">
+
+                            <div className="partner-mobile-avatar">
+                                <img src={partner.image} alt="" />
+                            </div>
+
+                            <div className="partner-mobile-quote">❝</div>
+
+                            <p className="partner-mobile-text">
+                                {partner.text}
+                            </p>
+
+                            <div className="partner-mobile-info">
+                                <h4>{partner.name}</h4>
+                                <span>{partner.role}</span>
+                            </div>
+
+                            <div className="partner-mobile-dots">
+                                {partners.map((_, i) => (
+                                    <span
+                                        key={i}
+                                        className={i === index ? "active" : ""}
+                                    />
+                                ))}
+                            </div>
+
+                            <div className="partner-mobile-arrows">
+                                <button onClick={prev}>←</button>
+                                <button onClick={next}>→</button>
+                            </div>
+
+                        </div>
+                        <img src={Union}  className='mobile_uniun'/>
+                    </div>
 
                 </div>
+                <div className=' cooperate-imgig UNION_coop'>  " </div>
+
                 <img src={imgIG} className='cooperate-imgig cooperate-imgig-p' alt="" />
                 <img className='cooperate-imgig cooperate-imgig-p2'  src={Mask_group} />
+                <img className='cooperate-imgig cooperate-imgig-p3'  src={Vector_cirle} />
             </section>
 
             {/* PARTNER LOGO */}
