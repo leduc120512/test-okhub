@@ -44,9 +44,10 @@
     left: 821px;
 }
 .cooperate-imgig-p3{
-    top: 3px;
-    right: 274px;
+    top: 49px;
+    right: 174px;
     width: 120px;
+
 }
 
 /* gradient wave */
@@ -161,7 +162,7 @@ font-weight: 600;
 /* main image */
 
 .partner-image img{
-
+margin-top: 50px;
     width: 450px;
 }
 
@@ -379,7 +380,7 @@ position: absolute;
         display: none;
     }
     .partner-logo-title{
-        left: 129px;
+        left: 103px;
     }
     .mobile_unium{
         display: flex !important;

@@ -47,21 +47,25 @@ function NewsSection() {
     const news = [
         {
             image: news1,
+detail :"Hoạt động nội bộ tăng cường văn hóa doanh nghiệp",
             title: "20/10 Tràn ngập tiếng cười ấm áp tại văn phòng Ami&M",
             date: "24/12/2023"
         },
         {
             image: news2,
+            detail :"Hoạt động nội bộ tăng cường văn hóa doanh nghiệp",
             title: "Ami&M tổ chức hội thảo phát triển kỹ năng cho sinh viên",
             date: "20/12/2023"
         },
         {
             image: news3,
+            detail :"Hoạt động nội bộ tăng cường văn hóa doanh nghiệp",
             title: "Ami&M mở rộng hợp tác cùng nhiều đối tác chiến lược",
             date: "18/12/2023"
         },
         {
             image: news1,
+            detail :"Ami&M tổ chức hội thảo phát triển kỹ năng cho sinh viên",
             title: "Hoạt động nội bộ tăng cường văn hóa doanh nghiệp",
             date: "10/12/2023"
         }
@@ -153,7 +157,13 @@ function NewsSection() {
 
                                         <h4>{item.title}</h4>
 
-                                        <p>{item.date}</p>
+                                        <h5 className='p-sold lt'>{item.detail}</h5>
+<div className='description-details'>
+    <p className='p-date'>{item.date}</p>
+
+    <p className='p-sold p-date'>Xem thêm↗</p>
+</div>
+
 
                                     </div>
 

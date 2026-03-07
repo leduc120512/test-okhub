@@ -111,13 +111,14 @@ là chìa khóa giúp thế hệ trẻ phát triển toàn diện trong tương 
     /* auto change partner */
     useEffect(() => {
         if (!show) return;
-
+        setFade(true);
+     setFade(true);
         const interval = setInterval(() => {
             setActiveIndex(prev => {
                 const next = (prev + 1) % partners.length;
                 return next;
             });
-            setFade(true);
+
         }, 3000);
 
         return () => clearInterval(interval);

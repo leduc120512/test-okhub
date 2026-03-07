@@ -109,7 +109,8 @@ overflow: hidden;
     color: white;
     font-weight: 500;
     letter-spacing: 1px;
-    margin-top: 45px;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .about-btn:hover {
