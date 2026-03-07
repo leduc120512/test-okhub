@@ -34,7 +34,7 @@ function About() {
             let move = window.scrollY * 0.05;
 
             // giới hạn 20px
-            if (move > 20) move = 20;
+            if (move > 150) move = 150;
 
             setOffset(move);
         };
@@ -53,8 +53,8 @@ function About() {
                 let next = prev + diff * 0.2;
 
                 // giới hạn ±30px
-                if (next > 30) next = 30;
-                if (next < -30) next = -30;
+                if (next > 50) next = 50;
+                if (next < -50) next = -50;
 
                 return next;
             });

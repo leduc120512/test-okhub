@@ -91,7 +91,7 @@
 }
 
 .footer-col li:hover{
-    opacity:0.8;
+    color: #e53935;
 }
 
 /* CONTACT */
@@ -202,3 +202,4 @@
     }
 
 }
+
