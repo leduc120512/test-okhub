@@ -229,14 +229,15 @@ position: relative;
 }
 
 .partner-logo-title{
-    text-align:center;
-    margin-bottom:30px;
-    z-index: 4;
-position: absolute;
+    position: absolute;
     top: -103px;
-    left: 190px;
-}
+    left: 22%;
+    transform: translateX(-50%);
 
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 4;
+}
 .partner-logo-title p{
     color:#2F80ED;
     font-weight:600;
@@ -380,7 +381,8 @@ position: absolute;
         display: none;
     }
     .partner-logo-title{
-        left: 103px;
+        left: 50%;
+        transform: translateX(-50%);
     }
     .mobile_unium{
         display: flex !important;

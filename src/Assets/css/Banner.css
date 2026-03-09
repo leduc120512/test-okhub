@@ -126,4 +126,7 @@
     .hero-content h1{
         font-size:30px;
     }
+    .Banner::before{
+        display:none;
+    }
 }
